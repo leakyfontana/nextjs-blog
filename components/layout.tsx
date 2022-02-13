@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Wave from './wave'
 
 const name = 'Xander Dyer'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Who is Xander Dyer?'
 
 export default function Layout({
   children,
