@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import Wave from '../components/wave'
 import { GetStaticProps } from 'next'
 
 export default function Home({
@@ -20,8 +21,8 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.shallow}`}>
-        <div className={utilStyles.container}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.seaFoam}`}>
+        <div className={`${utilStyles.container} `}>
           <h2 className={utilStyles.headingLg}>Thoughts</h2>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
@@ -36,6 +37,12 @@ export default function Home({
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.shallow}`}>
+        <Wave color="#76b6c4" layer={1} />
+        <div className={utilStyles.container}>
+          <h2 className={utilStyles.headingLg}>Resume</h2>
         </div>
       </section>
     </Layout>

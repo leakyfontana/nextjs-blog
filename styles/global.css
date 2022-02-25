@@ -1,3 +1,11 @@
+:root {
+  --sea-foam: #def3f6;
+  --shallow: #76b6c4;
+  --sky-blue: #7fcdff;
+  --swim-area: #1da2d8;
+  --deap-sea: #064273;
+  --sand: #C2B280;
+}
 html,
 body {
   padding: 0;
@@ -6,8 +14,8 @@ body {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  color: 	#064273;
-  background-color: #C2B280;
+  color:  var(--deap-sea);
+  background-color: var(--sand);
 }
 
 * {
@@ -15,7 +23,7 @@ body {
 }
 
 a {
-  color: #76b6c4;
+  color: var(--shallow);
   text-decoration: none;
 }
 

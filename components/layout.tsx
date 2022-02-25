@@ -49,7 +49,7 @@ export default function Layout({
                 equitable access to information, providing everyone the chance for success 
                 and the disruption of legacy institutions.</p> 
             </div>
-            <Wave />
+            <Wave color="#def3f6" layer={0} />
           </>
         ) : (
           <>
@@ -72,7 +72,7 @@ export default function Layout({
                 </Link>
               </h2>
             </div>
-            <Wave />
+            <Wave color="#def3f6" layer={0}/>
           </>
         )}
       </header>
