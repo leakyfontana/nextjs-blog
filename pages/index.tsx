@@ -21,7 +21,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.seaFoam}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
         <div className={`${utilStyles.container} `}>
           <h2 className={utilStyles.headingLg}>Thoughts</h2>
           <ul className={utilStyles.list}>
@@ -39,7 +39,7 @@ export default function Home({
           </ul>
         </div>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.shallow}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
         <Wave color="#76b6c4" layer={1} />
         <div className={utilStyles.container}>
           <h2 className={utilStyles.headingLg}>Resume</h2>
