@@ -6,10 +6,15 @@
   --deap-sea: #064273;
   --sand: #C2B280;
 }
-html,
-body {
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html,
+body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
@@ -18,9 +23,7 @@ body {
   background-color: var(--sand);
 }
 
-* {
-  box-sizing: border-box;
-}
+
 
 a {
   color: var(--shallow);
@@ -36,4 +39,8 @@ img {
   display: block;
   object-fit: cover;
   width: 100%;
+}
+
+svg {
+  margin-top: -1rem;
 }
