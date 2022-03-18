@@ -68,7 +68,7 @@
 
   .seaFoam {
     background-color: var(--sea-foam);
-    margin-bottom: -.05rem;
+    margin-top: -.05rem;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -85,4 +85,8 @@
 
   .shallowColor {
     background-color: var(--sea-foam);
+  }
+
+  .wave {
+    margin-top: -.05rem;
   }
