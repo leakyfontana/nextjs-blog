@@ -6,5 +6,12 @@
 }
 
 .backToHome {
-  padding: 3rem 0 0;
+  padding: 1rem 0 5rem;
 }
+
+@media only screen and (min-width:769px) {
+  .backToHome a {
+    padding: 0 0 0 10%;
+  }
+} 
+

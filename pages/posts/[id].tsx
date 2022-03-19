@@ -34,7 +34,7 @@ export default function Post({
   }
 }) {
   return (
-    <Layout>
+    <Layout pageName={"blog"}>
       <div className={utilStyles.shallow}>
         <Head>
           <title>{postData.title}</title>

@@ -17,11 +17,18 @@ export default function Home({
   }[]
 }) {
   return (
-    <Layout home>
+    <Layout pageName={"home"}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
+        <Wave isHome={true} layer={0} />
+        <div className={utilStyles.container}>
+          <h2 className={utilStyles.headingLg}>Resume</h2>
+        </div>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
+        <Wave isHome={true} layer={1} />
         <div className={`${utilStyles.container} `}>
           <h2 className={utilStyles.headingLg}>Thoughts</h2>
           <ul className={utilStyles.list}>
@@ -37,12 +44,6 @@ export default function Home({
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
-        <Wave color="#76b6c4" layer={1} />
-        <div className={utilStyles.container}>
-          <h2 className={utilStyles.headingLg}>Resume</h2>
         </div>
       </section>
     </Layout>

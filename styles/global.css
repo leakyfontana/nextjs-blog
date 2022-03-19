@@ -20,13 +20,12 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color:  var(--deap-sea);
-  background-color: var(--sand);
 }
 
 
 
 a {
-  color: var(--shallow);
+  color: white;
   text-decoration: none;
 }
 

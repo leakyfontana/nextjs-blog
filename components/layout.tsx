@@ -8,15 +8,31 @@ import Wave from './wave'
 const name = 'Xander Dyer'
 export const siteTitle = 'Who is Xander Dyer?'
 
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
+type layoutProps = {
+  children: React.ReactNode,
+  pageName: string
+}
+
+export default function Layout(Props: layoutProps)
+
+{
+  var topLayer;
+
+  const setBackground = () => { switch(Props.pageName) {
+      case "home":
+        topLayer = `${utilStyles.backgroundShallow}`
+        return `${utilStyles.backgroundSand}`;
+      case "blog":
+        topLayer = `${utilStyles.backgroundShallow}`
+        return `${utilStyles.backgroundSeaFoam}`;
+      default:
+        topLayer = `${utilStyles.backgroundShallow}`
+        return `${utilStyles.backgroundSand}`;
+    }
+  }
+
   return (
-    <div>
+    <div className={ setBackground() }>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -33,7 +49,7 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        {home ? (
+        {Props.pageName == "home" ? (
           <>
             <div className={utilStyles.container}>
               <Image
@@ -49,7 +65,6 @@ export default function Layout({
                 equitable access to information, providing everyone the chance for success 
                 and the disruption of legacy institutions.</p> 
             </div>
-            <Wave color="#def3f6" layer={0} />
           </>
         ) : (
           <>
@@ -72,13 +87,13 @@ export default function Layout({
                 </Link>
               </h2>
             </div>
-            <Wave color="#def3f6" layer={0}/>
+            <Wave isHome={false} layer={1}/>
           </>
         )}
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={` ${styles.backToHome} ${utilStyles.shallowColor} `}>
+      <main>{Props.children}</main>
+      {Props.pageName != "home" && (
+        <div className={` ${styles.backToHome} ${topLayer} `}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
