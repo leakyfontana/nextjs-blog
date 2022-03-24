@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Date from '../components/date'
 import Wave from '../components/wave'
 import { GetStaticProps } from 'next'
+import React from 'react'
+import Record from '../components/record'
 
 export default function Home({
   allPostsData
@@ -29,6 +31,13 @@ export default function Home({
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
         <Wave isHome={true} layer={1} />
+        <div className={utilStyles.rowContainer}>
+          <Record /> 
+          <h2 className={utilStyles.headingLg}>What's Xander listening to?</h2>
+        </div>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
+        <Wave isHome={true} layer={2} />
         <div className={`${utilStyles.container} `}>
           <h2 className={utilStyles.headingLg}>Thoughts</h2>
           <ul className={utilStyles.list}>

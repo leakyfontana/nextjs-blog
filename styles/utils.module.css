@@ -1,10 +1,10 @@
 
 .heading2Xl {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
 }
   
 .headingXl {
@@ -56,9 +56,21 @@
 
 .container {
   max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 1rem;
-  
+  padding: 1rem 1rem;
+  /* margin: 3rem auto 1rem; */
+  display: flex;
+  flex-direction: column;
+  align-items:center;  
+}
+
+.rowContainer {
+  /* max-width: 36rem; */
+  padding: 1rem 1rem;
+  /* margin: 3rem auto 1rem; */
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 2rem;
 }
 
 .blogContainer {
@@ -81,24 +93,19 @@
 
 .seaFoam {
   background-color: var(--sea-foam);
-  margin-top: -.05rem;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
+  margin-top: -.1rem;
 }
 
 .shallow {
   background-color: var(--shallow);
   margin-bottom: -.1rem;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
+}
+
+.skyBlue {
+  background-color: var(--sky-blue);
+  margin-bottom: -.1rem;
 }
 
 .shallowColor {
   background-color: var(--sea-foam);
-}
-
-.wave {
-  margin-top: -.05rem;
 }
