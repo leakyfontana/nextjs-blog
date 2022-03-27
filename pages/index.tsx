@@ -38,7 +38,6 @@ export default function Home({
 
   var sessionWithName = session as SessionWithName; 
 
-  session.user
   return (
     <Layout pageName={"home"}>
       <Head>
@@ -54,7 +53,7 @@ export default function Home({
         <Wave isHome={true} layer={1} />
         <div className={utilStyles.rowContainer}>
           <Record /> 
-          <h2 className={utilStyles.headingLg}>What's {sessionWithName.user.name} listening to?</h2>
+          <h2 className={utilStyles.headingLg}>What's listening to?</h2>
         </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
