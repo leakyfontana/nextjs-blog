@@ -8,6 +8,8 @@ import Wave from '../components/wave'
 import { GetStaticProps } from 'next'
 import React from 'react'
 import Record from '../components/record'
+import { useSession } from "next-auth/react"
+import { Session } from 'next-auth'
 
 export default function Home({
   allPostsData
@@ -17,7 +19,26 @@ export default function Home({
     title: string
     id: string
   }[]
-}) {
+})
+{
+  
+
+  const { data: session} = useSession()
+
+  //Implemented interface becuase TS did not recognize name as part of user
+  interface SessionWithName extends Session {
+    user:  {
+      accessToken: string,
+      refreshToken: string,
+      email: string,
+      username: string,
+      name: string
+    };
+  }
+
+  var sessionWithName = session as SessionWithName; 
+
+  session.user
   return (
     <Layout pageName={"home"}>
       <Head>
@@ -33,7 +54,7 @@ export default function Home({
         <Wave isHome={true} layer={1} />
         <div className={utilStyles.rowContainer}>
           <Record /> 
-          <h2 className={utilStyles.headingLg}>What's Xander listening to?</h2>
+          <h2 className={utilStyles.headingLg}>What's {sessionWithName.user.name} listening to?</h2>
         </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
