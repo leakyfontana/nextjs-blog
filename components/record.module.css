@@ -1,6 +1,4 @@
-.label {
-    fill: var(--swim-area);
-}
+
   
 .disk {
     fill: var(--deap-sea);
@@ -27,6 +25,15 @@
 .line {
     stroke: var(--sea-foam);
     fill: var(--deap-sea);
+}
+
+.pad {
+    fill: black;
+}
+
+.padLine {
+    /* stroke: #36454F; */
+    fill: black;
 }
 
 /* text {

@@ -1,15 +1,17 @@
 import React from 'react'
 import styles from './turntable.module.css'
+import { renderToStaticMarkup } from 'react-dom/server'
+
 
 
 export default function Turntable() {
   return(
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+        <svg className={styles.turntable} version="1.1" xmlns="http://www.w3.org/2000/svg" 
          xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" 
          id="wood" x="0px" y="0px" viewBox="0 0 341 341" 
          height="100%" width="100%" preserveAspectRatio="xMidYMid slice">
         {/* Filter */}
-      <filter id="roughen" x="0" y="0" width="100%" height="100%">
+        <filter id="roughen" x="0" y="0" width="100%" height="100%">
         {/* Noise */}
         <feTurbulence result="noise1" type="turbulence" seed="5" 
                       baseFrequency="0.03 0.01" numOctaves="4" 
