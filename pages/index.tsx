@@ -52,8 +52,7 @@ export default function Home({
       <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
         <Wave isHome={true} layer={1} />
         <div className={utilStyles.rowContainer}>
-          <Record /> 
-          <h2 className={utilStyles.headingLg}>What's listening to?</h2>
+          <Record />
         </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>

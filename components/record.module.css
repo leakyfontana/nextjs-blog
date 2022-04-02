@@ -1,7 +1,7 @@
 
   
 .disk {
-    fill: var(--deap-sea);
+    /* fill: var(--deap-sea); */
     /* filter: drop-shadow(0 0 3rem black); */
     z-index: 1;
 }
@@ -19,13 +19,13 @@
 
 .turntable {
     border-radius: .3em;
-    max-width: 500px;
+    width: 100%;
 }
 
-.line {
+/* .line {
     stroke: var(--sea-foam);
     fill: var(--deap-sea);
-}
+} */
 
 .pad {
     fill: black;
