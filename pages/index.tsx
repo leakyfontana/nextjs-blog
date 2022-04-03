@@ -39,42 +39,45 @@ export default function Home({
   var sessionWithName = session as SessionWithName; 
 
   return (
-    <Layout pageName={"home"}>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
-        <Wave isHome={true} layer={0} />
-        <div className={utilStyles.container}>
-          <h2 className={utilStyles.headingLg}>Resume</h2>
-        </div>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
-        <Wave isHome={true} layer={1} />
-        <div className={utilStyles.rowContainer}>
-          <Record />
-        </div>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
-        <Wave isHome={true} layer={2} />
-        <div className={`${utilStyles.container} `}>
-          <h2 className={utilStyles.headingLg}>Thoughts</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    </Layout>
+    // <div className='flex flex-col items-center justify-center w-full h-screen'>
+      <Layout pageName={"home"}>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+          {/* <div className='flex flex-col items-center justify-center w-full h-screen'> */}
+            <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
+              <Wave isHome={true} layer={0} />
+              <div className={utilStyles.container}>
+                <h2 className={utilStyles.headingLg}>Resume</h2>
+              </div>
+            </section>
+            <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
+              <Wave isHome={true} layer={1} />
+              <div className={utilStyles.rowContainer}>
+                <Record />
+              </div>
+            </section>
+            <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
+              <Wave isHome={true} layer={2} />
+              <div className={`${utilStyles.container} `}>
+                <h2 className={utilStyles.headingLg}>Thoughts</h2>
+                <ul className={utilStyles.list}>
+                  {allPostsData.map(({ id, date, title }) => (
+                    <li className={utilStyles.listItem} key={id}>
+                      <Link href={`/posts/${id}`}>
+                        <a>{title}</a>
+                      </Link>
+                      <br />
+                      <small className={utilStyles.lightText}>
+                        <Date dateString={date} />
+                      </small>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          {/* </div> */}
+      </Layout>
   )
 }
 

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --sea-foam: #def3f6;
   --shallow: #76b6c4;
