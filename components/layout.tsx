@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Wave from './wave'
 
@@ -20,21 +17,21 @@ export default function Layout(Props: layoutProps)
 
   const setBackground = () => { switch(Props.pageName) {
       case "home":
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSand}`;
+        topLayer = `bg-shallow`
+        return `bg-sand`;
       case "blog":
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSeaFoam}`;
+        topLayer = `bg-shallow`
+        return `bg-seafoam`;
       default:
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSand}`;
+        topLayer = `bg-shallow`
+        return `bg-sand`;
     }
   }
 
   return (
-    <div className={ setBackground() }>
+    <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -46,59 +43,45 @@ export default function Layout(Props: layoutProps)
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
-      <header className={styles.header}>
+      <header className={` ${setBackground()} flex flex-col items-center justify-center gap-4 pt-3`}>
         {Props.pageName == "home" ? (
           <>
-            <div className={utilStyles.container}>
-              <Image
-                priority
+              <img
                 src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={144}
-                width={144}
+                className='w-2/12 rounded-full'
                 alt={name}
               />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <p>Full-stack developer and student of life. Interested in
-                equitable access to information, providing everyone the chance for success 
+              <h1 className='text-5xl'>{name}</h1>
+              <p className='w-7/12'>Full-stack developer and student of life. Interested in
+                equitable access to information 
                 and the disruption of legacy institutions.</p> 
-            </div>
           </>
         ) : (
           <>
-            <div className={utilStyles.container}>
+            <img
+              src="/images/profile.jpg"
+              className='w-1/12 rounded-full '
+              alt={name}
+              />
+            <h2 className='text-3xl'>
               <Link href="/">
-                <a>
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
-                    height={108}
-                    width={108}
-                    alt={name}
-                  />
-                </a>
+                <a className='text-deep-sea'>{name}</a>
               </Link>
-              <h2 className={utilStyles.headingLg}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h2>
-            </div>
+            </h2>
             <Wave isHome={false} layer={1}/>
           </>
         )}
       </header>
       <main>{Props.children}</main>
       {Props.pageName != "home" && (
-        <div className={` ${styles.backToHome} ${topLayer} `}>
+        <div className={` ${topLayer} px-10 py-5 text-xl`}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }

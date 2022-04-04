@@ -35,13 +35,13 @@ export default function Post({
 }) {
   return (
     <Layout pageName={"blog"}>
-      <div className={utilStyles.shallow}>
+      <div className='bg-shallow'>
         <Head>
           <title>{postData.title}</title>
         </Head>
-        <article className={utilStyles.blogContainer}>
-          <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-          <div className={utilStyles.lightText}>
+        <article className='flex flex-col gap-2 px-20'>
+          <h1 className='text-4xl'>{postData.title}</h1>
+          <div className='text-stone-600'>
             <Date dateString={postData.date} />
           </div>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

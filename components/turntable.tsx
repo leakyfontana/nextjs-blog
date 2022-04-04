@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 
 export default function Turntable() {
   return(
-        <svg className={styles.turntable} version="1.1" xmlns="http://www.w3.org/2000/svg" 
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
          xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" 
          id="wood" x="0px" y="0px" viewBox="0 0 341 341" 
          height="100%" width="100%" preserveAspectRatio="xMidYMid slice">

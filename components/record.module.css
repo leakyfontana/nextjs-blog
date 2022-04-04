@@ -1,47 +1,4 @@
 
-  
-.disk {
-    /* fill: var(--deap-sea); */
-    /* filter: drop-shadow(0 0 3rem black); */
-    z-index: 1;
-}
-
 @keyframes spin {
     100%{transform: rotate(360deg);}
 }
-
-.record {
-    transform-origin: center center;
-    animation: spin 10s linear infinite;
-    filter: drop-shadow(0 0 .2rem black);
-    z-index: 1;
-}
-
-.turntable {
-    border-radius: .3em;
-    width: 100%;
-}
-
-/* .line {
-    stroke: var(--sea-foam);
-    fill: var(--deap-sea);
-} */
-
-.pad {
-    fill: black;
-}
-
-.padLine {
-    /* stroke: #36454F; */
-    fill: black;
-}
-
-/* text {
-font-size: .65em;
-} */
-
-/* svg {
-    width: 400px;
-    height: 400px;
-    border: 1px solid black; 
-} */

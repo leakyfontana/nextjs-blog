@@ -36,47 +36,49 @@ export default function Home({
     };
   }
 
+  //${utilStyles.headingMd}
+
+  //{utilStyles.container}
+
   var sessionWithName = session as SessionWithName; 
 
   return (
-    // <div className='flex flex-col items-center justify-center w-full h-screen'>
       <Layout pageName={"home"}>
         <Head>
           <title>{siteTitle}</title>
         </Head>
-          {/* <div className='flex flex-col items-center justify-center w-full h-screen'> */}
-            <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
-              <Wave isHome={true} layer={0} />
-              <div className={utilStyles.container}>
-                <h2 className={utilStyles.headingLg}>Resume</h2>
-              </div>
-            </section>
-            <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
-              <Wave isHome={true} layer={1} />
-              <div className={utilStyles.rowContainer}>
-                <Record />
-              </div>
-            </section>
-            <section className={`${utilStyles.headingMd} ${utilStyles.skyBlue}`}>
-              <Wave isHome={true} layer={2} />
-              <div className={`${utilStyles.container} `}>
-                <h2 className={utilStyles.headingLg}>Thoughts</h2>
-                <ul className={utilStyles.list}>
-                  {allPostsData.map(({ id, date, title }) => (
-                    <li className={utilStyles.listItem} key={id}>
-                      <Link href={`/posts/${id}`}>
-                        <a>{title}</a>
-                      </Link>
-                      <br />
-                      <small className={utilStyles.lightText}>
-                        <Date dateString={date} />
-                      </small>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          {/* </div> */}
+        <section className='bg-seafoam'>
+          <Wave isHome={true} layer={0} />
+          <div className='flex flex-col items-center gap-2'>
+            <h2 className='text-2xl'>Resume</h2>
+          </div>
+        </section>
+        <section className='bg-shallow'>
+          <Wave isHome={true} layer={1} />
+          <div className='flex justify-center p-4 md:gap-10 md:flex-row sm:flex-col-reverse sm:items-center sm:gap-5'>
+            <Record />
+          </div>
+        </section>
+        <section className='bg-sky-blue'>
+          <Wave isHome={true} layer={2} />
+          <div className='flex flex-col items-center gap-2'>
+            <h2 className='text-2xl'>Thoughts</h2>
+            <ul className='list-none'>
+              {allPostsData.map(({ id, date, title }) => (
+                <li key={id}>
+                  <div className='flex flex-col'>
+                    <Link href={`/posts/${id}`}>
+                      <a className='text-xl'>{title}</a>
+                    </Link>
+                    <small className='text-stone-600'>
+                      <Date dateString={date} />
+                    </small>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
       </Layout>
   )
 }
