@@ -68,7 +68,7 @@ export default function Home({
                 <li key={id}>
                   <div className='flex flex-col'>
                     <Link href={`/posts/${id}`}>
-                      <a className='text-xl'>{title}</a>
+                      <a className='text-xl text-white hover:underline'>{title}</a>
                     </Link>
                     <small className='text-stone-600'>
                       <Date dateString={date} />

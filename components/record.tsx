@@ -185,11 +185,29 @@ export default function Record() {
             </button>
           </div>
           
-          <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white drop-shadow-xl'>
-            <h2 className='text-3xl'>Now Playing: </h2>
-            <h3 className='text-xl'>{currentSong.name}</h3>
-            <h3 className='text-xl'>By: {currentSong.artists.join(", ")}</h3>
-          </div>
+
+          {
+            isPlaying ? 
+            (
+              <>
+                <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white drop-shadow-xl'>
+                  <h2 className='text-3xl'>Now Playing: </h2>
+                  <h3 className='text-xl'>{currentSong.name}</h3>
+                  <h3 className='text-xl'>By: {currentSong.artists.join(", ")}</h3>
+                </div>
+              </>
+            )           
+            :   
+            (
+              <>
+                <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white drop-shadow-xl'>
+                  <h2 className='text-2xl'>Not currently playing anything &#128546;</h2>
+                  <h2 className='text-2xl'>Open Spotify and play a song!</h2>
+                </div>
+              </>
+              
+            )
+          }
 
           </>
           )

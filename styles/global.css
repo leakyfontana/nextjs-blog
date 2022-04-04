@@ -25,14 +25,3 @@ body {
   font-size: 18px;
   color:  var(--deap-sea);
 }
-
-
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
