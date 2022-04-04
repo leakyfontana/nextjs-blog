@@ -6,6 +6,10 @@ import Link from 'next/link'
 import Date from '../components/date'
 import Wave from '../components/wave'
 import { GetStaticProps } from 'next'
+import React from 'react'
+import Record from '../components/record'
+import { useSession } from "next-auth/react"
+import { Session } from 'next-auth'
 
 export default function Home({
   allPostsData
@@ -15,38 +19,67 @@ export default function Home({
     title: string
     id: string
   }[]
-}) {
+})
+{
+  
+
+  const { data: session} = useSession()
+
+  //Implemented interface becuase TS did not recognize name as part of user
+  interface SessionWithName extends Session {
+    user:  {
+      accessToken: string,
+      refreshToken: string,
+      email: string,
+      username: string,
+      name: string
+    };
+  }
+
+  //${utilStyles.headingMd}
+
+  //{utilStyles.container}
+
+  var sessionWithName = session as SessionWithName; 
+
   return (
-    <Layout pageName={"home"}>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.seaFoam}`}>
-        <Wave isHome={true} layer={0} />
-        <div className={utilStyles.container}>
-          <h2 className={utilStyles.headingLg}>Resume</h2>
-        </div>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.shallow}`}>
-        <Wave isHome={true} layer={1} />
-        <div className={`${utilStyles.container} `}>
-          <h2 className={utilStyles.headingLg}>Thoughts</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    </Layout>
+      <Layout pageName={"home"}>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+        <section className='bg-seafoam'>
+          <Wave isHome={true} layer={0} />
+          <div className='flex flex-col items-center gap-2'>
+            <h2 className='text-2xl'>Resume</h2>
+          </div>
+        </section>
+        <section className='bg-shallow'>
+          <Wave isHome={true} layer={1} />
+          <div className='flex justify-center p-4 md:gap-10 md:flex-row sm:flex-col-reverse sm:items-center sm:gap-5'>
+            <Record />
+          </div>
+        </section>
+        <section className='bg-sky-blue'>
+          <Wave isHome={true} layer={2} />
+          <div className='flex flex-col items-center gap-2'>
+            <h2 className='text-2xl'>Thoughts</h2>
+            <ul className='list-none'>
+              {allPostsData.map(({ id, date, title }) => (
+                <li key={id}>
+                  <div className='flex flex-col'>
+                    <Link href={`/posts/${id}`}>
+                      <a className='text-xl text-white hover:underline'>{title}</a>
+                    </Link>
+                    <small className='text-stone-600'>
+                      <Date dateString={date} />
+                    </small>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </Layout>
   )
 }
 

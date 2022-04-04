@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Wave from './wave'
+import Image from 'next/image'
 
 const name = 'Xander Dyer'
 export const siteTitle = 'Who is Xander Dyer?'
@@ -20,21 +18,21 @@ export default function Layout(Props: layoutProps)
 
   const setBackground = () => { switch(Props.pageName) {
       case "home":
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSand}`;
+        topLayer = `bg-shallow`
+        return `bg-sand`;
       case "blog":
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSeaFoam}`;
+        topLayer = `bg-shallow`
+        return `bg-seafoam`;
       default:
-        topLayer = `${utilStyles.backgroundShallow}`
-        return `${utilStyles.backgroundSand}`;
+        topLayer = `bg-shallow`
+        return `bg-sand`;
     }
   }
 
   return (
-    <div className={ setBackground() }>
+    <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -46,59 +44,53 @@ export default function Layout(Props: layoutProps)
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
-      <header className={styles.header}>
         {Props.pageName == "home" ? (
           <>
-            <div className={utilStyles.container}>
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={144}
-                width={144}
-                alt={name}
+            <header className={` ${setBackground()} flex sm:flex-col sm:items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+              <div className='flex flex-col items-center w-full sm:p-0 md:p-8 sm:order-1 md:order-2'>
+              <img
+                  src="/images/profile.jpg"
+                  className='rounded-full md:w-full sm:w-4/12 drop-shadow-xl'
+                  alt={name}
               />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <p>Full-stack developer and student of life. Interested in
-                equitable access to information, providing everyone the chance for success 
-                and the disruption of legacy institutions.</p> 
-            </div>
+              </div>
+              <div className='flex flex-col items-center w-full gap-5 sm:px-8 md:px-0 md:pl-12 md:order-1 sm:order-2'>
+                <h1 className='text-5xl text-center'>{name}</h1>
+                <p className='text-xl'>Full-stack developer and student of life. Interested in
+                  equitable access to information 
+                  and the disruption of legacy institutions.</p>
+              </div>
+            </header>
           </>
         ) : (
           <>
-            <div className={utilStyles.container}>
-              <Link href="/">
-                <a>
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
-                    height={108}
-                    width={108}
-                    alt={name}
+            <header className={` ${setBackground()} flex sm:flex-col sm:items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+              <div className='flex flex-col items-center w-full sm:p-0 md:p-8 sm:order-1 md:order-2'>
+                <img
+                  src="/images/profile.jpg"
+                  className='w-2/12 rounded-full drop-shadow-xl'
+                  alt={name}
                   />
-                </a>
-              </Link>
-              <h2 className={utilStyles.headingLg}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h2>
-            </div>
+                <h2 className='text-3xl hover:underline'>
+                  <Link href="/">
+                    <a className='text-deep-sea hover:text-white'>{name}</a>
+                  </Link>
+                </h2>
+              </div>
+            </header>
             <Wave isHome={false} layer={1}/>
           </>
         )}
-      </header>
       <main>{Props.children}</main>
       {Props.pageName != "home" && (
-        <div className={` ${styles.backToHome} ${topLayer} `}>
+        <div className={` ${topLayer} px-10 py-5 text-xl text-white hover:underline`}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }
