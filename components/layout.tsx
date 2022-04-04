@@ -45,12 +45,12 @@ export default function Layout(Props: layoutProps)
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
-      <header className={` ${setBackground()} flex flex-col items-center justify-center gap-4 pt-3`}>
+      <header className={` ${setBackground()} flex flex-col items-center justify-center gap-4 pt-3 w-screen`}>
         {Props.pageName == "home" ? (
           <>
               <img
                 src="/images/profile.jpg"
-                className='w-2/12 rounded-full'
+                className='rounded-full sm:w-4/12 md:w-2/12'
                 alt={name}
               />
               <h1 className='text-5xl'>{name}</h1>

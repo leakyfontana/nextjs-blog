@@ -18,6 +18,7 @@ module.exports = {
         'swim-area': '#1da2d8',
         'deep-sea': '#064273',
         'sand': '#C2B280',
+        'off-white': '#F2F2F2',
       },
       animation: {
         'record-spin': 'spin 10s linear infinite'

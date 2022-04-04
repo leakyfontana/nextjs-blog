@@ -5,9 +5,15 @@ import useSpotify from '../hooks/useSpotify'
 import demoGif from '../public/gifs/recordplayer.gif'
 
 export class Song {
-  name: string;
-  artists: Array<string>;
-  art: string;
+  constructor(name: string, artists: Array<string>, art: string) {
+    this.name = name;
+    this.artists = artists;
+    this.art = art;
+  }
+
+  public name: string;
+  public artists: Array<string>;
+  public art: string;
 }
 
 //TODO: Implement npm react-palette
@@ -17,7 +23,8 @@ export default function Record() {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [isLoading, setIsLoading] = useState(false);
-  const [currentSong, setCurrentSong] = useState<Song>();
+  const [currentSong, setCurrentSong] = useState<Song>(
+    new Song("loading name...", ["loading artists..."], "loading art..."));
   const [currentSongArt, setCurrentSongArt] = useState();
   const [isPlaying, setIsPlaying] = useState<boolean>();
   const [recordColor, setRecordColor] = useState("#064273");
@@ -34,7 +41,7 @@ export default function Record() {
   
           if (data.statusCode != 204 && data.body.currently_playing_type == "track") {
             
-            const currentSong: Song = {
+            let tempSong: Song = {
               name: data.body.item.name,
               artists: data.body.item.artists.map(function(item) { 
                 return item.name;
@@ -43,10 +50,10 @@ export default function Record() {
               art: data.body.item.album.images[0].url,           
             };
   
-            console.log(currentSong)
+            console.log(tempSong)
   
-            currentSong.art = data.body.item.album.images[0].url;          
-            setCurrentSong(currentSong);
+            //currentSong.art = data.body.item.album.images[0].url;          
+            setCurrentSong(tempSong);
             setCurrentSongArt(data.body.item.album.images[0].url);
   
             setIsPlaying(true);
@@ -178,10 +185,10 @@ export default function Record() {
             </button>
           </div>
           
-          <div className='flex flex-col gap-5 p-5 bg-white rounded-md drop-shadow-xl'>
+          <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white drop-shadow-xl'>
             <h2 className='text-3xl'>Now Playing: </h2>
-            <h3 className='text-xl'>currentSong.name</h3>
-            <h3 className='text-xl'>By: currentSong.artists.join(", ")</h3>
+            <h3 className='text-xl'>{currentSong.name}</h3>
+            <h3 className='text-xl'>By: {currentSong.artists.join(", ")}</h3>
           </div>
 
           </>
@@ -218,7 +225,7 @@ export default function Record() {
           </svg>
         </button>
       </Link>
-      <div className='flex flex-col gap-5 p-5 bg-white rounded-md md:w-6/12 drop-shadow-xl'>
+      <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white md:w-6/12 drop-shadow-xl'>
         <h2 className='text-xl'>Try out my custom Spotify-integrated record player!</h2>
         <div className='flex items-center justify-center gap-3 md:flex-row sm:flex-col'>
           <img src="gifs/recordplayer.gif" className='rounded-md md:w-10/12 sm:w-full'/>
