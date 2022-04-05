@@ -219,8 +219,8 @@ export default function Record() {
     <>
       <div className='flex flex-col-reverse items-center md:flex-row md:justify-center gap-7'>
         <Link href="/login">
-          <button className='relative md:order-last'>
-            <span className='absolute z-10 text-center hover:underline text-deep-sea top-3 left-9'>Sign In</span>
+          <button className='relative py-5 md:order-last'>
+            <span className='absolute z-10 text-center hover:underline text-deep-sea top-8 left-9'>Sign In</span>
             <svg className='drop-shadow-xl' viewBox="105.311 289.254 175.846 54.952" width="175.846" height="54.952">
             <defs>
               <pattern id="pattern-0-0" patternTransform="matrix(1.068461, 0, 0, 1.091886, 114.480534, 303.348586)" xlinkHref="#pattern-0"></pattern>
