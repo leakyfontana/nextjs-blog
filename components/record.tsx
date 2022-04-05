@@ -217,42 +217,44 @@ export default function Record() {
   }
   return (
     <>
-      <Link href="/login">
-        <button className='relative md:order-last'>
-          <span className='absolute z-10 text-center hover:underline text-deep-sea top-3 left-9'>Sign In</span>
-          <svg className='drop-shadow-xl' viewBox="105.311 289.254 175.846 54.952" width="175.846" height="54.952">
-          <defs>
-            <pattern id="pattern-0-0" patternTransform="matrix(1.068461, 0, 0, 1.091886, 114.480534, 303.348586)" xlinkHref="#pattern-0"></pattern>
-            <pattern x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 100 100" id="pattern-0">
-              <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273' transform="matrix(0, 1, -1, 0, 102.132065, 80.469963)"></rect>
-              <rect x="3.219" y="2.042" width="16.702" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.299324, 63.599854)"></rect>
-              <rect x="3.219" y="2.042" width="16.702" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.341942, 30.386934)"></rect>
-              <rect x="3.317" y="2.042" width="17.211" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.084045, -3.102002)"></rect>
-              <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273'transform="matrix(0, 1, -1, 0, 102.280762, 47.200165)"></rect>
-              <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273' transform="matrix(0, 1, -1, 0, 102.21685, 14.177777)"></rect>
-            </pattern>
-          </defs>
-          <path d="M 124.185 289.27 L 239.075 289.27 L 239.075 289.327 C 242.424 288.908 246.797 290.296 252.191 293.492 L 270.485 304.329 C 284.715 
-          312.758 284.715 321.12 270.485 329.416 L 252.191 340.081 C 246.797 343.226 242.424 344.573 239.075 344.121 L 239.075 344.174 L 124.185 
-          344.174 L 124.185 344.142 L 115.996 344.142 C 110.095 344.142 105.311 339.254 105.311 333.223 L 105.311 300.229 C 105.311 294.198 110.095 289.31 
-          115.996 289.31 L 124.185 289.31 L 124.185 289.27 Z" strokeWidth="0px" stroke="rgb(218, 131, 85)" paintOrder="stroke" fill="rgb(242, 242, 242)"></path>
-          <rect x="131.388" y="300.044" width="100.901" height="33.189" rx="12" ry="12" stroke="rgb(0, 0, 0)" strokeOpacity="0" fill="rgb(5, 33, 99)"></rect>
-          <path  fill="rgb(216, 216, 216)" stroke="rgb(215, 215, 215)" d="M 214.672 316.45 L 232.232 316.441"></path>
-          <rect x="117.524" y="300.522" width="20.626" height="32.95" rx="8" ry="8" stroke="rgb(0, 0, 0)" strokeOpacity="0" fill="url(#pattern-0-0)" paintOrder="fill"></rect>
-          <rect x="130.994" y="299.819" width="83.748" height="33.743" rx="12" ry="12" fill="rgb(216, 216, 216)" stroke="rgb(0, 0, 0)" strokeOpacity="0"></rect>
-          </svg>
-        </button>
-      </Link>
-      <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white md:w-6/12 drop-shadow-xl'>
-        <h2 className='text-xl'>Try out my custom Spotify-integrated record player!</h2>
-        <div className='flex flex-col items-center justify-center gap-3 md:flex-row'>
-          <img src="gifs/recordplayer.gif" className='w-full rounded-md md:w-10/12'/>
-          <svg xmlns="http://www.w3.org/2000/svg" className="hidden md:w-2/12 md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-             <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" className="block w-12 h-12 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+      <div className='flex flex-col-reverse items-center md:flex-row md:justify-center gap-7'>
+        <Link href="/login">
+          <button className='relative md:order-last'>
+            <span className='absolute z-10 text-center hover:underline text-deep-sea top-3 left-9'>Sign In</span>
+            <svg className='drop-shadow-xl' viewBox="105.311 289.254 175.846 54.952" width="175.846" height="54.952">
+            <defs>
+              <pattern id="pattern-0-0" patternTransform="matrix(1.068461, 0, 0, 1.091886, 114.480534, 303.348586)" xlinkHref="#pattern-0"></pattern>
+              <pattern x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 100 100" id="pattern-0">
+                <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273' transform="matrix(0, 1, -1, 0, 102.132065, 80.469963)"></rect>
+                <rect x="3.219" y="2.042" width="16.702" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.299324, 63.599854)"></rect>
+                <rect x="3.219" y="2.042" width="16.702" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.341942, 30.386934)"></rect>
+                <rect x="3.317" y="2.042" width="17.211" height="100.201" fill="#def3f6" transform="matrix(0, 1, -1, 0, 102.084045, -3.102002)"></rect>
+                <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273'transform="matrix(0, 1, -1, 0, 102.280762, 47.200165)"></rect>
+                <rect x="3.169" y="2.041" width="16.436" height="100.196" fill='#064273' transform="matrix(0, 1, -1, 0, 102.21685, 14.177777)"></rect>
+              </pattern>
+            </defs>
+            <path d="M 124.185 289.27 L 239.075 289.27 L 239.075 289.327 C 242.424 288.908 246.797 290.296 252.191 293.492 L 270.485 304.329 C 284.715 
+            312.758 284.715 321.12 270.485 329.416 L 252.191 340.081 C 246.797 343.226 242.424 344.573 239.075 344.121 L 239.075 344.174 L 124.185 
+            344.174 L 124.185 344.142 L 115.996 344.142 C 110.095 344.142 105.311 339.254 105.311 333.223 L 105.311 300.229 C 105.311 294.198 110.095 289.31 
+            115.996 289.31 L 124.185 289.31 L 124.185 289.27 Z" strokeWidth="0px" stroke="rgb(218, 131, 85)" paintOrder="stroke" fill="rgb(242, 242, 242)"></path>
+            <rect x="131.388" y="300.044" width="100.901" height="33.189" rx="12" ry="12" stroke="rgb(0, 0, 0)" strokeOpacity="0" fill="rgb(5, 33, 99)"></rect>
+            <path  fill="rgb(216, 216, 216)" stroke="rgb(215, 215, 215)" d="M 214.672 316.45 L 232.232 316.441"></path>
+            <rect x="117.524" y="300.522" width="20.626" height="32.95" rx="8" ry="8" stroke="rgb(0, 0, 0)" strokeOpacity="0" fill="url(#pattern-0-0)" paintOrder="fill"></rect>
+            <rect x="130.994" y="299.819" width="83.748" height="33.743" rx="12" ry="12" fill="rgb(216, 216, 216)" stroke="rgb(0, 0, 0)" strokeOpacity="0"></rect>
+            </svg>
+          </button>
+        </Link>
+        <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white md:w-6/12 drop-shadow-xl'>
+          <h2 className='text-xl'>Try out my custom Spotify-integrated record player!</h2>
+          <div className='flex flex-col items-center justify-center gap-3 md:flex-row'>
+            <img src="gifs/recordplayer.gif" className='w-full rounded-md md:w-10/12'/>
+            <svg xmlns="http://www.w3.org/2000/svg" className="hidden md:w-2/12 md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" className="block w-12 h-12 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
       </div>
     </>
