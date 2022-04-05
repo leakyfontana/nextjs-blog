@@ -245,12 +245,12 @@ export default function Record() {
       </Link>
       <div className='flex flex-col gap-5 p-5 rounded-md bg-off-white md:w-6/12 drop-shadow-xl'>
         <h2 className='text-xl'>Try out my custom Spotify-integrated record player!</h2>
-        <div className='flex items-center justify-center gap-3 md:flex-row sm:flex-col'>
-          <img src="gifs/recordplayer.gif" className='rounded-md md:w-10/12 sm:w-full'/>
-          <svg xmlns="http://www.w3.org/2000/svg" className="md:w-2/12 sm:hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className='flex flex-col items-center justify-center gap-3 md:flex-row'>
+          <img src="gifs/recordplayer.gif" className='w-full rounded-md md:w-10/12'/>
+          <svg xmlns="http://www.w3.org/2000/svg" className="hidden md:w-2/12 md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 md:hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="block w-12 h-12 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

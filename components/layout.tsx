@@ -48,15 +48,15 @@ export default function Layout(Props: layoutProps)
       </Head>
         {Props.pageName == "home" ? (
           <>
-            <header className={` ${setBackground()} flex sm:flex-col sm:items-stretch md:items-center md:flex-row pt-3 gap-2`}>
-              <div className='flex flex-col items-center w-full sm:p-0 md:p-8 sm:order-1 md:order-2'>
+            <header className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+              <div className='flex flex-col items-center order-1 w-full p-0 md:p-8 md:order-2'>
               <img
                   src="/images/profile.jpg"
-                  className='rounded-full md:w-full sm:w-4/12 drop-shadow-xl'
+                  className='w-4/12 rounded-full md:w-full drop-shadow-xl'
                   alt={name}
               />
               </div>
-              <div className='flex flex-col items-center w-full gap-5 sm:px-8 md:px-0 md:pl-12 md:order-1 sm:order-2'>
+              <div className='flex flex-col items-center order-2 w-full gap-5 px-8 md:px-0 md:pl-12 md:order-1'>
                 <h1 className='text-5xl text-center'>{name}</h1>
                 <p className='text-xl'>Full-stack developer and student of life. Interested in
                   equitable access to information 
@@ -66,8 +66,8 @@ export default function Layout(Props: layoutProps)
           </>
         ) : (
           <>
-            <header className={` ${setBackground()} flex sm:flex-col sm:items-stretch md:items-center md:flex-row pt-3 gap-2`}>
-              <div className='flex flex-col items-center w-full sm:p-0 md:p-8 sm:order-1 md:order-2'>
+            <header className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+              <div className='flex flex-col items-center order-1 w-full p-0 md:p-8 md:order-2'>
                 <img
                   src="/images/profile.jpg"
                   className='w-2/12 rounded-full drop-shadow-xl'
