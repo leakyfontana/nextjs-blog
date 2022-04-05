@@ -31,7 +31,7 @@ export default function Wave(Props: WaveProps) {
     return (
     <svg className={styles.wave} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <rect width="100%" height="100%" fill={backgroundColor}></rect>
-        <rect x="0" y="-1" width="100%" height="1%" fill={backgroundColor}></rect>
+        <rect x="0" y="-5" width="100%" height="10%" fill={backgroundColor}></rect>
         <path transform="translate(0, -8)" vectorEffect="non-scaling-stroke" fill='#ffffff' 
         fillOpacity="1" d="M0,64L11.4,80C22.9,96,46,128,69,138.7C91.4,149,114,139,137,122.7C160,
         107,183,85,206,69.3C228.6,53,251,43,274,69.3C297.1,96,320,160,343,160C365.7,160,389,96,
