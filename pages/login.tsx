@@ -10,15 +10,15 @@ interface Provider {
 }
 
 function Login( {providers} )  {
-    console.log(providers)
+    //console.log(providers)
 
     return (
-        <div>
-            {/* <img className="w-52 mb-5" src="https://links.papareact.com/9xl" alt=""/> */}
+        <div className='flex flex-col items-center justify-center w-screen min-h-screen bg-black felx-col'>
+            <img className="mb-5 w-52" src="images/spotify.png" alt=""/> 
 
             {Object.values(providers).map((provider: Provider) => (
                 <div key={provider.name}>
-                    <button
+                    <button className='bg-[#1AB26B] text-xl text-white p-3 rounded-full'
                     onClick={() => signIn(provider.id, {callbackUrl: "/"})}
                     >Login with {provider.name}</button>
                 </div>
