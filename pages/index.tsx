@@ -55,7 +55,7 @@ export default function Home({
         </section>
         <section className='bg-shallow'>
           <Wave isHome={true} layer={1} />
-          <div className='flex flex-col-reverse items-center justify-center gap-5 p-4 md:gap-10 md:flex-row'>
+          <div className='flex flex-col items-center justify-center gap-5 p-4 md:gap-10 md:flex-row'>
             <Record />
           </div>
         </section>

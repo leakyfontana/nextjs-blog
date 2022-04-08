@@ -82,7 +82,7 @@ export default function Record() {
 
           <>
         
-          <div className='flex flex-wrap items-center justify-center gap-4 flex-column'>
+          <div className='flex flex-wrap items-center justify-center order-last gap-4 md:-order-1 flex-column'>
             <svg className='w-full rounded-md drop-shadow-xl' viewBox="0 0 400 400">
 
             <filter id="roughen" x="0" y="0" width="100%" height="100%">
@@ -133,7 +133,7 @@ export default function Record() {
             isPlaying ? 
             (
               <>
-                  <g className='origin-center animate-record-spin z-1'>
+                  <g className='origin-center transform-gpu animate-record-spin z-1'>
                     <circle fill={recordColor} r="180" cx="200" cy="200" />
                     <circle fill={recordColor} stroke={recordLineColor} r="160" cx="200" cy="200" />
                     <circle fill={recordColor} stroke={recordLineColor} r="140" cx="200" cy="200" />
@@ -217,9 +217,9 @@ export default function Record() {
   }
   return (
     <>
-      <div className='flex flex-col-reverse items-center md:flex-row md:justify-center gap-7'>
+      <div className='flex flex-col items-center md:flex-row md:justify-center gap-7'>
         <Link href="/login">
-          <button className='relative py-5 md:order-last'>
+          <button className='relative order-last py-5'>
             <span className='absolute z-10 text-center hover:underline text-deep-sea top-8 left-9'>Sign In</span>
             <svg className='drop-shadow-xl' viewBox="105.311 289.254 175.846 54.952" width="175.846" height="54.952">
             <defs>
