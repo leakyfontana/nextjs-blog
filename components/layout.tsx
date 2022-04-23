@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Wave from './wave'
 import Image from 'next/image'
+import React from 'react'
+import Navbar from './navbar'
 
 const name = 'Xander Dyer'
 export const siteTitle = 'Who is Xander Dyer?'
@@ -32,7 +34,8 @@ export default function Layout(Props: layoutProps)
   return (
     <>
       <Head>
-        {/* <link rel="icon" href="/favicon.ico" />
+         <link rel="icon" href="/favicon.ico" />
+         {/*
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -46,13 +49,14 @@ export default function Layout(Props: layoutProps)
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
+      <Navbar/>
         {Props.pageName == "home" ? (
           <>
-            <header className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+            <div className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
               <div className='flex flex-col items-center order-1 w-full p-0 md:p-8 md:order-2'>
               <img
-                  src="/images/profile.jpg"
-                  className='w-4/12 rounded-full md:w-full drop-shadow-xl'
+                  src="/images/OnTheBeach.svg"
+                  className='w-4/12 md:w-full'
                   alt={name}
               />
               </div>
@@ -62,15 +66,15 @@ export default function Layout(Props: layoutProps)
                   equitable access to information 
                   and the disruption of legacy institutions.</p>
               </div>
-            </header>
+            </div>
           </>
         ) : (
           <>
-            <header className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
+            <div className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pt-3 gap-2`}>
               <div className='flex flex-col items-center order-1 w-full p-0 md:p-8 md:order-2'>
                 <img
-                  src="/images/profile.jpg"
-                  className='w-2/12 rounded-full drop-shadow-xl'
+                  src="/images/OnTheBeach.svg"
+                  className='w-2/12'
                   alt={name}
                   />
                 <h2 className='text-3xl hover:underline'>
@@ -79,7 +83,7 @@ export default function Layout(Props: layoutProps)
                   </Link>
                 </h2>
               </div>
-            </header>
+            </div>
             <Wave isHome={false} layer={1}/>
           </>
         )}

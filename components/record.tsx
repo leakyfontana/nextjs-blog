@@ -133,7 +133,7 @@ export default function Record() {
             isPlaying ? 
             (
               <>
-                  <g className='origin-center transform-gpu animate-record-spin z-1'>
+                  <g className='origin-center animate-record-spin z-1'>
                     <circle fill={recordColor} r="180" cx="200" cy="200" />
                     <circle fill={recordColor} stroke={recordLineColor} r="160" cx="200" cy="200" />
                     <circle fill={recordColor} stroke={recordLineColor} r="140" cx="200" cy="200" />

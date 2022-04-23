@@ -47,19 +47,19 @@ export default function Home({
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <section className='bg-seafoam'>
+        <section id="myProjects" className='bg-seafoam'>
           <Wave isHome={true} layer={0} />
           <div className='flex flex-col items-center gap-2'>
-            <h2 className='text-2xl'>Resume</h2>
+            <h2 className='text-2xl'>My Projects</h2>
           </div>
         </section>
-        <section className='bg-shallow'>
+        <section id="recordPlayer" className='bg-shallow'>
           <Wave isHome={true} layer={1} />
           <div className='flex flex-col items-center justify-center gap-5 p-4 md:gap-10 md:flex-row'>
             <Record />
           </div>
         </section>
-        <section className='bg-sky-blue'>
+        <section id="blog" className='bg-sky-blue'>
           <Wave isHome={true} layer={2} />
           <div className='flex flex-col items-center gap-2'>
             <h2 className='text-2xl'>Thoughts</h2>
