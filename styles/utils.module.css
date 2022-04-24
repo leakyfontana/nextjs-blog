@@ -1,1 +1,7 @@
+.board1 {
+    transform: rotate(45deg) translate(88px, -220px);
+}
 
+.board2 {
+    transform: rotate(-45deg) translate(-258px, 270px);
+}

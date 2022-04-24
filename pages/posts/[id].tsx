@@ -40,7 +40,7 @@ export default function Post({
           <title>{postData.title}</title>
         </Head>
         <article className='flex flex-col gap-2 px-20'>
-          <h1 className='text-4xl'>{postData.title}</h1>
+          <h2 className='text-4xl'>{postData.title}</h2>
           <div className='text-stone-600'>
             <Date dateString={postData.date} />
           </div>
