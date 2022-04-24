@@ -10,6 +10,9 @@ import React from 'react'
 import Record from '../components/record'
 import { useSession } from "next-auth/react"
 import { Session } from 'next-auth'
+import Lifesaver from '../components/lifesaver'
+import Slider from '../components/slider'
+import { Projects } from '../components/projects'
 
 export default function Home({
   allPostsData
@@ -50,8 +53,9 @@ export default function Home({
         <section id="myProjects" className='bg-seafoam'>
           <Wave isHome={true} layer={0} />
           <div className='flex flex-col items-center gap-2'>
-            <h2 className='text-2xl'>My Projects</h2>
+            <h2 className='text-3xl'>My Projects</h2>
           </div>
+          <Slider projects={Projects} />
         </section>
         <section id="recordPlayer" className='bg-shallow'>
           <Wave isHome={true} layer={1} />
