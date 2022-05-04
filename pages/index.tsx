@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import Wave from '../components/wave'
@@ -13,11 +12,29 @@ import { Session } from 'next-auth'
 import Lifesaver from '../components/lifesaver'
 import Slider from '../components/slider'
 import { Projects } from '../components/projects'
+import { getSortedProjectsData } from '../lib/projects'
+import { getSortedPostsData } from '../lib/posts'
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData()
+  const allProjectsData = getSortedProjectsData()
+  return {
+    props: {
+      allPostsData,
+      allProjectsData
+    }
+  }
+}
 
 export default function Home({
-  allPostsData
+  allPostsData, allProjectsData
 }: {
   allPostsData: {
+    date: string
+    title: string
+    id: string
+  }[],
+  allProjectsData: {
     date: string
     title: string
     id: string
@@ -55,7 +72,7 @@ export default function Home({
           <div className='flex flex-col items-center gap-2'>
             <h2 className='text-3xl'>My Projects</h2>
           </div>
-          <Slider projects={Projects} />
+          <Slider projects={Projects} allProjectsData={allProjectsData} />
         </section>
         <section id="recordPlayer" className='bg-shallow'>
           <Wave isHome={true} layer={1} />
@@ -85,13 +102,4 @@ export default function Home({
         </section>
       </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
 }

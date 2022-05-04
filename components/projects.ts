@@ -2,6 +2,7 @@ export const Projects  = [
     {
         title: 'Confirmed Chrome Extension',
         image: '/images/confirmedChrome.png',
+        id: 'confirmed-chrome-extension',
         livePreview: '',
         sourceCode: '',
         description: `An interactive chrome-browser extension developed for Confirmed. Upon sign-in, the user is provided
@@ -11,6 +12,7 @@ export const Projects  = [
     {
         title: ' KVS Tabla Website',
         image: '/images/kvstabla.png',
+        id: 'kvs-tabla',
         livePreview: 'https://www.kvstabla.com/',
         sourceCode: 'https://github.com/leakyfontana/KVSTabla_Website',
         description: `SPA Website made for professional Tabla player: Sid Komaragiri (KVSTabla). This site implements 
@@ -19,6 +21,7 @@ export const Projects  = [
     {
         title: 'Spotify Record-Player Component',
         image: '/gifs/recordplayer.gif',
+        id: 'spotify-record',
         livePreview: '/#recordPlayer',
         sourceCode: 'https://github.com/leakyfontana/nextjs-blog/blob/main/components/record.tsx',
         description: `A Spotify-connected record player component. Upon authentication, the user is
@@ -28,6 +31,7 @@ export const Projects  = [
     {
         title: '❗This Website❗',
         image: '/images/OnTheBeach.svg',
+        id: 'this-website',
         livePreview: '/',
         sourceCode: 'https://github.com/leakyfontana/nextjs-blog',
         description: 'My personal portfolio website, enjoy 🤞',

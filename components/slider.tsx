@@ -1,9 +1,40 @@
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import React, { useState } from "react";
+import { getSortedProjectsData } from "../lib/projects";
+import Date from '../components/date'
 import Lifesaver from "./lifesaver";
 import { Projects } from "./projects";
 
-const Slider = ({ projects }) => {
+// export const getStaticProps: GetStaticProps = async () => {
+//     const allProjectsData = getSortedProjectsData()
+//     return {
+//       props: {
+//         allProjectsData
+//       }
+//     }
+//   }
+
+type project = {
+    title: string,
+    image: string,
+    id: string,
+    livePreview: string,
+    sourceCode: string,
+    description: string,
+}
+
+export default function Slider ({ 
+    allProjectsData, projects
+    }: {
+    allProjectsData: {
+        date: string
+        title: string
+        id: string
+    }[],
+    projects: Array<project>
+})
+{
     const [current, setCurrent] = useState(0)
     const length = projects.length;
 
@@ -19,6 +50,9 @@ const Slider = ({ projects }) => {
         return null;
     }
 
+    var temp = true;
+    //console.log(allProjectsData);
+
     return (
         <div className='flex flex-row items-start justify-center gap-2 p-1 py-10 md:gap-5 md:p-5'>
             <span className='self-center order-1' onClick={prevProject}>
@@ -31,7 +65,21 @@ const Slider = ({ projects }) => {
                         ${index - 1 === current || (current == length - 1 && index === 0) ? 'md:flex md:order-3' : ''}
                         ${index - 2 === current || (current == length - 2 && index === 0) || (current == length - 1 && index === 1)  ? 'lg:flex lg:order-4' : ''}
                         `}>
-                            <h3 className='text-lg'>{project.title}</h3>
+                            {allProjectsData.map(({ id, date, title  }) => (
+                            
+                                id == project.id ? 
+                                (
+                                    <Link href={`/projects/${project.id}`}>
+                                        <h3 key={id} className='text-lg cursor-pointer hover:underline'>{project.title}</h3>
+                                    </Link>
+                                )
+                                :
+                                (
+                                    <>
+                                    </>
+                                )
+                            
+                            ))}
                             <img className='w-5/6 rounded-sm' src={project.image} />
                             <div className='flex flex-row gap-3'>
                                 <Link href={project.livePreview} passHref>
@@ -52,5 +100,4 @@ const Slider = ({ projects }) => {
     )
 }
 
-
-export default Slider;
+//export default Slider;
