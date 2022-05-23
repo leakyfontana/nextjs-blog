@@ -1,19 +1,19 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import React, { useState } from "react";
-import { getSortedProjectsData } from "../lib/projects";
+import { getSortedContentData } from "../lib/content";
 import Date from '../components/date'
 import Lifesaver from "./lifesaver";
 import { Projects } from "./projects";
 
-// export const getStaticProps: GetStaticProps = async () => {
-//     const allProjectsData = getSortedProjectsData()
-//     return {
-//       props: {
-//         allProjectsData
-//       }
-//     }
-//   }
+export const getStaticProps: GetStaticProps = async () => {
+    const allProjectsData = getSortedContentData('projects')
+    return {
+      props: {
+        allProjectsData
+      }
+    }
+  }
 
 type project = {
     title: string,
@@ -52,6 +52,7 @@ export default function Slider ({
 
     var temp = true;
     //console.log(allProjectsData);
+
 
     return (
         <div className='flex flex-row items-start justify-center gap-2 p-1 py-10 md:gap-5 md:p-5'>

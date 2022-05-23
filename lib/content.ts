@@ -4,17 +4,19 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
+const postsDirectory = path.join(process.cwd(), 'posts')
 const projectsDirectory = path.join(process.cwd(), 'projects')
 
-export function getSortedProjectsData() {
+export function getSortedContentData(contentType: string) {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(projectsDirectory)
-  const allProjectsData = fileNames.map(fileName => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
+  var directory = contentType === 'posts' ? postsDirectory : projectsDirectory;
+  const fileNames = fs.readdirSync(directory)
+  const allContentData = fileNames.map(fileName => {
+    // Remove ".mdx" from file name to get id
+    const id = fileName.replace(/\.mdx?$/, '')
 
     // Read markdown file as string
-    const fullPath = path.join(projectsDirectory, fileName)
+    const fullPath = path.join(directory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Use gray-matter to parse the post metadata section
@@ -27,7 +29,7 @@ export function getSortedProjectsData() {
     }
   })
   // Sort posts by date
-  return allProjectsData.sort((a, b) => {
+  return allContentData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -36,19 +38,21 @@ export function getSortedProjectsData() {
   })
 }
 
-export function getAllProjectIds() {
-  const fileNames = fs.readdirSync(projectsDirectory)
+export function getAllContentIds(contentType: string) {
+  var directory = contentType === 'posts' ? postsDirectory : projectsDirectory;
+  const fileNames = fs.readdirSync(directory)
   return fileNames.map(fileName => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, '')
+        id: fileName.replace(/\.mdx?$/, '')
       }
     }
   })
 }
 
-export async function getProjectData(id: string) {
-  const fullPath = path.join(projectsDirectory, `${id}.md`)
+export async function getContentData(id: string, contentType: string) {
+  var directory = contentType === 'posts' ? postsDirectory : projectsDirectory;
+  const fullPath = path.join(directory, `${id}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section

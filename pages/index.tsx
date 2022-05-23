@@ -12,12 +12,11 @@ import { Session } from 'next-auth'
 import Lifesaver from '../components/lifesaver'
 import Slider from '../components/slider'
 import { Projects } from '../components/projects'
-import { getSortedProjectsData } from '../lib/projects'
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedContentData } from '../lib/content'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  const allProjectsData = getSortedProjectsData()
+  const allPostsData = getSortedContentData('posts')
+  const allProjectsData = getSortedContentData('projects')
   return {
     props: {
       allPostsData,
