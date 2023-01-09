@@ -31,7 +31,9 @@ const Slider = ({ projects }) => {
                         ${index - 1 === current || (current == length - 1 && index === 0) ? 'md:flex md:order-3' : ''}
                         ${index - 2 === current || (current == length - 2 && index === 0) || (current == length - 1 && index === 1)  ? 'lg:flex lg:order-4' : ''}
                         `}>
-                            <h3 className='text-lg'>{project.title}</h3>
+                            <Link href={`/projects/${project.slug}`}>
+                                <h3 className='text-lg cursor-pointer hover:text-swim-area hover:underline'>{project.title}</h3>
+                            </Link>
                             <img className='w-5/6 rounded-sm' src={project.image} />
                             <div className='flex flex-row gap-3'>
                                 <Link href={project.livePreview} passHref>

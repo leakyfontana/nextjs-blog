@@ -10,7 +10,6 @@ interface Provider {
 }
 
 function Login( {providers} )  {
-    //console.log(providers)
 
     return (
         <div className='flex flex-col items-center justify-center w-screen min-h-screen bg-black felx-col'>
