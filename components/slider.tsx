@@ -36,12 +36,12 @@ const Slider = ({ projects }) => {
                             </Link>
                             <img className='w-5/6 rounded-sm' src={project.image} />
                             <div className='flex flex-row gap-3'>
-                                <Link href={project.livePreview} passHref>
-                                    <a target="_blank" className={`text-sm hover:underline ${project.livePreview == '' ? 'pointer-events-none text-gray-500 opacity-75' : ''}`}>&#128421; Live Preview</a>
-                                </Link>
-                                <Link href={project.sourceCode}>
-                                    <a target="_blank" className={`text-sm hover:underline ${project.sourceCode == '' ? 'pointer-events-none text-gray-500 opacity-75' : ''}`}>&#128193; Source Code</a>
-                                </Link>
+                                <a href={project.livePreview} target="_blank" className={`text-sm hover:underline ${project.livePreview == '' ? 'pointer-events-none text-gray-500 opacity-75' : ''}`}>
+                                    &#128421; Live Preview
+                                </a>
+                                <a href={project.sourceCode} target="_blank" className={`text-sm hover:underline ${project.sourceCode == '' ? 'pointer-events-none text-gray-500 opacity-75' : ''}`}>
+                                    &#128193; Source Code
+                                </a>
                             </div>
                             <p className='text-sm'>{project.description}</p>
                         </div>
