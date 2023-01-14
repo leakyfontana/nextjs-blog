@@ -12,6 +12,8 @@ import path from 'path';
 import React from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeRaw from 'rehype-raw';
+import {nodeTypes} from '@mdx-js/mdx';
 //import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
 import { MetaProps } from '../../types/layout';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
@@ -68,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [mdxPrism, rehypeSlug, [rehypeRaw, {passThrough: nodeTypes}], rehypeAutolinkHeadings],
     },
     scope: data,
   });

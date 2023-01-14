@@ -1,0 +1,15 @@
+.photo {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        max-width: 100px;
+        border-radius: 10px;
+    }
+    h2 {
+        color: red;
+    }
+    p {
+        color: purple;
+    }
+}

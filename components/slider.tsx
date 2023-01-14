@@ -70,9 +70,9 @@ export default function Slider ({
                             
                                 id == project.id ? 
                                 (
-                                    <Link href={`/projects/${project.id}`}>
-                                        <h3 key={id} className='text-lg cursor-pointer hover:underline'>{project.title}</h3>
-                                    </Link>
+                                        <Link href={`/projects/${project.id}`}>
+                                            <h3 key={id} className='text-lg cursor-pointer hover:underline'>{project.title}</h3>
+                                        </Link>
                                 )
                                 :
                                 (

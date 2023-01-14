@@ -13,7 +13,7 @@ function Login( {providers} )  {
     //console.log(providers)
 
     return (
-        <div className='flex flex-col items-center justify-center w-screen min-h-screen bg-black felx-col'>
+        <div className='flex flex-col items-center justify-center w-screen min-h-screen bg-black'>
             <img className="mb-5 w-52" src="images/spotify.png" alt=""/> 
 
             {Object.values(providers).map((provider: Provider) => (

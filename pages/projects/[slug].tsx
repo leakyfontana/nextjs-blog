@@ -12,11 +12,14 @@ import path from 'path';
 import React from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeRaw from 'rehype-raw';
+import {nodeTypes} from '@mdx-js/mdx';
 //import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
 import { MetaProps } from '../../types/layout';
 import { projectFilePaths, PROJECTS_PATH } from '../../utils/mdxUtils';
 import { PostType } from '../../types/post';
 import Layout from '../../components/layout';
+import styles from './projects.module.css'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -43,15 +46,21 @@ const ProjectPage = ({ source, frontMatter }: ProjectPageProps): JSX.Element => 
   };
   return (
     <Layout pageName={"blog"}>
-      <article>
+      <article className="flex flex-col justify-center bg-shallow">
         <h1 className="mb-3 text-gray-900 dark:text-white">
           {frontMatter.title}
         </h1>
         <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
           {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
         </p>
-        <div className="prose dark:prose-dark">
-          <MDXRemote {...source} components={components} />
+        <div className={`prose dark:prose-dark ${styles}`}>
+          <MDXRemote {...source} components={{
+            img: (props) => <img {...props} className = "w-5/6 rounded-sm" /> ,
+            h2: (props) => <h2 {...props} className = "text-3xl" /> ,
+            h3: (props) => <h3 {...props} className = "text-2xl" /> ,
+
+
+          }} />
         </div>
       </article>
     </Layout>
@@ -68,7 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [mdxPrism, rehypeSlug, [rehypeRaw, {passThrough: nodeTypes}], rehypeAutolinkHeadings],
     },
     scope: data,
   });
