@@ -53,9 +53,9 @@ export default function Layout(Props: layoutProps) {
             </div>
             <div className="flex flex-col items-center order-2 w-full gap-8 md:px-0 md:pl-12 md:order-1">
               <h1 className="text-4xl text-center">{name}</h1>
-              <div className="flex flex-row gap-5">
+              <div className="flex flex-row gap-2 md:gap-5">
                 <button
-                  className="w-16 drop-shadow-lg"
+                  className="w-1/6 drop-shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("https://github.com/leakyfontana", "_blank");
@@ -69,7 +69,7 @@ export default function Layout(Props: layoutProps) {
                   />
                 </button>
                 <button
-                  className="w-16 drop-shadow-lg"
+                  className="w-1/6 drop-shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open(
@@ -86,7 +86,7 @@ export default function Layout(Props: layoutProps) {
                   />
                 </button>
                 <button
-                  className="w-16 drop-shadow-lg"
+                  className="w-1/6 drop-shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("https://www.linkedin.com/in/xdyer/", "_blank");
@@ -100,7 +100,7 @@ export default function Layout(Props: layoutProps) {
                   />
                 </button>
                 <button
-                  className="w-16 drop-shadow-lg"
+                  className="w-1/6 drop-shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("mailto:xdyer777@gmail.com", "_blank");
@@ -114,7 +114,7 @@ export default function Layout(Props: layoutProps) {
                   />
                 </button>
                 <button
-                  className="w-16 drop-shadow-lg"
+                  className="w-1/6 drop-shadow-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("/files/XanderJDyerResume2023.pdf", "_blank");
