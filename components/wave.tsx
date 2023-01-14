@@ -32,6 +32,7 @@ export default function Wave(Props: WaveProps) {
   let lastTime = null;
 
   const Animate = (time: number) => {
+    try {
     //if last time is not equal to 0
     if (lastTime != null) {
       angle += (time - lastTime) * 0.0005;
@@ -83,6 +84,11 @@ export default function Wave(Props: WaveProps) {
     );
 
     requestAnimationFrame(Animate);
+    }
+    catch (err)
+    {
+      console.log(err);
+    }
   };
 
   if (process.browser) {
