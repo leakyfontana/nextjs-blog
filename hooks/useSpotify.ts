@@ -14,7 +14,7 @@ function useSpotify() {
         if (session) {
             // If refresh access token attempt fails, route user to login
 
-            if (session.error === "RefreshAccessTokenError") {
+            if (status !== "authenticated") {
                 signIn();
             }
 

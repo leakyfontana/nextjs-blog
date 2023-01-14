@@ -49,8 +49,7 @@ export default function Record() {
               }),
               art: data.body.item.album.images[0].url,           
             };
-  
-            console.log(tempSong)
+
   
             //currentSong.art = data.body.item.album.images[0].url;          
             setCurrentSong(tempSong);
