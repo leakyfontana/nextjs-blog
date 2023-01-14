@@ -3,6 +3,7 @@ import Link from "next/link";
 import Wave from "./wave";
 import React from "react";
 import Navbar from "./navbar";
+import Image from "next/image";
 
 const name = "Xander Dyer";
 export const siteTitle = "LeakyDev | Home";
@@ -33,11 +34,6 @@ export default function Layout(Props: layoutProps) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
         <meta name="og:title" content={siteTitle} />
       </Head>
       <Navbar pageName={Props.pageName} />
@@ -47,14 +43,16 @@ export default function Layout(Props: layoutProps) {
             className={` ${setBackground()} flex flex-col items-stretch md:items-center md:flex-row pl-4`}
           >
             <div className="flex flex-col items-center order-1 w-full p-0 md:p-8 md:order-2">
-              <img
+              <Image
                 src="/images/OnTheBeach.svg"
                 className="w-1/3 md:w-8/12"
+                width={100}
+                height={100}
                 alt={name}
               />
             </div>
             <div className="flex flex-col items-center order-2 w-full gap-8 md:px-0 md:pl-12 md:order-1">
-              <h1 className="text-5xl text-center">{name}</h1>
+              <h1 className="text-4xl text-center">{name}</h1>
               <div className="flex flex-row gap-5">
                 <button
                   className="w-16 drop-shadow-lg"
@@ -63,7 +61,12 @@ export default function Layout(Props: layoutProps) {
                     window.open("https://github.com/leakyfontana", "_blank");
                   }}
                 >
-                  <img src="https://img.icons8.com/3d-fluency/188/null/github.png" />
+                  <Image
+                    src="https://img.icons8.com/3d-fluency/94/null/github.png"
+                    alt="link to Xander's github"
+                    width={94}
+                    height={94}
+                  />
                 </button>
                 <button
                   className="w-16 drop-shadow-lg"
@@ -75,7 +78,12 @@ export default function Layout(Props: layoutProps) {
                     );
                   }}
                 >
-                  <img src="https://img.icons8.com/3d-fluency/188/null/instagram-new.png" />
+                  <Image
+                    src="https://img.icons8.com/3d-fluency/94/null/instagram-new.png"
+                    alt="link to Xander's instagram"
+                    width={94}
+                    height={94}
+                  />
                 </button>
                 <button
                   className="w-16 drop-shadow-lg"
@@ -84,7 +92,12 @@ export default function Layout(Props: layoutProps) {
                     window.open("https://www.linkedin.com/in/xdyer/", "_blank");
                   }}
                 >
-                  <img src="https://img.icons8.com/3d-fluency/188/null/linkedin.png" />
+                  <Image
+                    src="https://img.icons8.com/3d-fluency/94/null/linkedin.png"
+                    alt="link to Xander's linkedin"
+                    width={94}
+                    height={94}
+                  />
                 </button>
                 <button
                   className="w-16 drop-shadow-lg"
@@ -93,7 +106,12 @@ export default function Layout(Props: layoutProps) {
                     window.open("mailto:xdyer777@gmail.com", "_blank");
                   }}
                 >
-                  <img src="https://img.icons8.com/3d-fluency/188/null/mail.png" />
+                  <Image
+                    src="https://img.icons8.com/3d-fluency/94/null/mail.png"
+                    alt="send Xander an email"
+                    width={94}
+                    height={94}
+                  />
                 </button>
                 <button
                   className="w-16 drop-shadow-lg"
@@ -102,14 +120,19 @@ export default function Layout(Props: layoutProps) {
                     window.open("/files/XanderJDyerResume2023.pdf", "_blank");
                   }}
                 >
-                  <img src="https://img.icons8.com/3d-fluency/188/null/document.png" />
+                  <Image
+                    src="https://img.icons8.com/3d-fluency/94/null/document.png"
+                    alt="Xander's resume"
+                    width={94}
+                    height={94}
+                  />
                 </button>
               </div>
               <p className="text-lg">
                 Like the tide, I have risen in the realm of software
-                development. My portfolio is a sea of skill and imagination. See it below,
-                where the depths of the digital domain await on an eerie journey into
-                the unknown.
+                development. My portfolio is a sea of skill and imagination. See
+                it below, where the depths of the digital domain await on an
+                eerie journey into the unknown.
               </p>
             </div>
           </div>

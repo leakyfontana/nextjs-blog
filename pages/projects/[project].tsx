@@ -1,7 +1,8 @@
 import { NextPage } from "next";
-import router from "next/router";
+import { useRouter } from 'next/router'
 
-const KVS: NextPage = () => {
+const ProjectPage: NextPage = () => {
+    const router = useRouter()
     const { project } = router.query;
 
     return (
@@ -11,4 +12,4 @@ const KVS: NextPage = () => {
     );
 }
 
-export default KVS;
+export default ProjectPage;

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Lifesaver from "./lifesaver";
 import { Projects } from "./projects";
+import Image from "next/image";
 
 const Slider = ({ projects }) => {
     const [current, setCurrent] = useState(0)
@@ -34,7 +35,7 @@ const Slider = ({ projects }) => {
                             <Link href={`/projects/${project.slug}`}>
                                 <h3 className='text-lg cursor-pointer hover:text-swim-area hover:underline'>{project.title}</h3>
                             </Link>
-                            <img className='w-5/6 rounded-sm' src={project.image} />
+                            <Image className='w-5/6 rounded-sm' src={project.image} width={800} height={800} alt={`image for ${project.title}`} />
                             <div className='flex flex-row gap-3'>
                                 <a href={project.livePreview} target="_blank" className={`text-sm hover:underline ${project.livePreview == '' ? 'pointer-events-none text-gray-500 opacity-75' : ''}`}>
                                     &#128421; Live Preview
