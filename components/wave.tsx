@@ -43,7 +43,7 @@ export default function Wave(Props: WaveProps) {
     let wave = document.querySelector(`#wave-${CSS.escape(layer.toString())}`);
     let path1 = document.querySelector(`#path1-${CSS.escape(layer.toString())}`);
     let path2 = document.querySelector(`#path2-${CSS.escape(layer.toString())}`);
-    let width = window.innerWidth;
+    let width = window.outerWidth;
 
     if (wave && path1 && path2) {
 
