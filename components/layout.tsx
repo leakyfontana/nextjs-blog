@@ -129,10 +129,9 @@ export default function Layout(Props: layoutProps) {
                 </button>
               </div>
               <p className="text-lg">
-                Like the tide, I have risen in the realm of software
-                development. My portfolio is a sea of skill and imagination. See
-                it below, where the depths of the digital domain await on an
-                eerie journey into the unknown.
+                Welcome! I'm Xander, a full-stack developer with experience in various technologies 
+                and frameworks. I have a passion for building innovative software solutions. Check out 
+                my portfolio to see my recent projects and get in touch if you're interested in collaborating!
               </p>
             </div>
           </div>
