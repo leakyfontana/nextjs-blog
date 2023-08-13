@@ -56,6 +56,7 @@ export default function Layout(Props: layoutProps) {
               <div className="flex flex-row gap-2 md:gap-5">
                 <button
                   className="w-1/6 drop-shadow-lg"
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("https://github.com/leakyfontana", "_blank");
@@ -70,10 +71,11 @@ export default function Layout(Props: layoutProps) {
                 </button>
                 <button
                   className="w-1/6 drop-shadow-lg"
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open(
-                      "https://www.instagram.com/leakyfontana/",
+                      "https://retrogram.xyz",
                       "_blank"
                     );
                   }}
@@ -87,6 +89,7 @@ export default function Layout(Props: layoutProps) {
                 </button>
                 <button
                   className="w-1/6 drop-shadow-lg"
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("https://www.linkedin.com/in/xdyer/", "_blank");
@@ -101,6 +104,7 @@ export default function Layout(Props: layoutProps) {
                 </button>
                 <button
                   className="w-1/6 drop-shadow-lg"
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("mailto:xdyer777@gmail.com", "_blank");
@@ -115,6 +119,7 @@ export default function Layout(Props: layoutProps) {
                 </button>
                 <button
                   className="w-1/6 drop-shadow-lg"
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     window.open("/files/XanderJDyerResume2023.pdf", "_blank");

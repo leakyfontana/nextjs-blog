@@ -1,7 +1,7 @@
 import '../styles/global.css'
 import { AppProps } from 'next/app'
 import { SessionProvider } from "next-auth/react"
-import { Heebo } from '@next/font/google'
+import { Heebo } from "next/font/google"
 
 const heebo = Heebo({ subsets: ['latin'] });
 
