@@ -75,14 +75,14 @@ export default function Layout(Props: layoutProps) {
                   onClick={(e) => {
                     e.preventDefault();
                     window.open(
-                      "https://retrogram.xyz",
+                      "https://retrogr.am",
                       "_blank"
                     );
                   }}
                 >
                   <Image
                     src="https://img.icons8.com/3d-fluency/94/null/instagram-new.png"
-                    alt="link to Xander's instagram"
+                    alt="link to Xander's Retrogram"
                     width={94}
                     height={94}
                   />
